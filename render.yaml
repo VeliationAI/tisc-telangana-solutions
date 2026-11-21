@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tisc-telangana-solutions
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: ASSET_HEALTH_URL
+        value: https://gridsense-asset-health.onrender.com
