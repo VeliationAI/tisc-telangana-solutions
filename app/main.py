@@ -14,7 +14,7 @@ from app.challenges.registry import CHALLENGES, get_challenge, run_demo
 STATIC = Path(__file__).resolve().parent / "static"
 ASSET_HEALTH_URL = os.environ.get(
     "ASSET_HEALTH_URL",
-    "https://gridsense-bzqp.onrender.com",
+    "https://gridsense-live.onrender.com",
 )
 
 app = FastAPI(

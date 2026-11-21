@@ -3,7 +3,7 @@
 This is a lightweight rule-based demo. The full product (ML models, live
 telemetry, maintenance workflow) is the separate Asset Health service, linked
 via the ASSET_HEALTH_URL environment variable (default
-https://gridsense-bzqp.onrender.com).
+https://gridsense-live.onrender.com).
 """
 
 from __future__ import annotations
@@ -11,7 +11,7 @@ from __future__ import annotations
 import os
 from typing import Any
 
-DEFAULT_ASSET_HEALTH_URL = "https://gridsense-bzqp.onrender.com"
+DEFAULT_ASSET_HEALTH_URL = "https://gridsense-live.onrender.com"
 
 WEIGHTS = {"loading": 0.25, "thermal": 0.20, "age": 0.15, "history": 0.20, "imbalance": 0.10, "maintenance": 0.10}
 
