@@ -16,6 +16,10 @@ ASSET_HEALTH_URL = os.environ.get(
     "ASSET_HEALTH_URL",
     "https://gridsense-live.onrender.com",
 )
+MATERIAL_INSPECTOR_URL = os.environ.get(
+    "MATERIAL_INSPECTOR_URL",
+    "https://ai-material-inspector.onrender.com",
+)
 
 app = FastAPI(
     title="TISC Telangana Solutions Platform",
@@ -41,6 +45,7 @@ def list_challenges(department: str | None = None):
     return {
         "count": len(items),
         "asset_health_url": ASSET_HEALTH_URL,
+        "material_inspector_url": MATERIAL_INSPECTOR_URL,
         "items": items,
     }
 
@@ -64,6 +69,8 @@ def challenge_demo(challenge_id: int):
         raise HTTPException(500, f"Demo failed: {exc}") from exc
     if challenge_id == 18:
         payload.setdefault("summary", {})["full_product_url"] = ASSET_HEALTH_URL
+    if challenge_id == 11:
+        payload.setdefault("summary", {})["full_product_url"] = MATERIAL_INSPECTOR_URL
     return payload
 
 

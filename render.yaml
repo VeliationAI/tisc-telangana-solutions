@@ -11,3 +11,5 @@ services:
         value: production
       - key: ASSET_HEALTH_URL
         value: https://gridsense-live.onrender.com
+      - key: MATERIAL_INSPECTOR_URL
+        value: https://ai-material-inspector.onrender.com
